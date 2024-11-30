@@ -14,9 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Reference Include="ReactWithDotNet">
-	    <HintPath>..\..\ReactWithDotNet\ReactWithDotNet\bin\Debug\net8.0\ReactWithDotNet.dll</HintPath>
-	  </Reference>
+		<PackageReference Include="ReactWithDotNet" Version="1.0.0" />
 	</ItemGroup>
 
 </Project>

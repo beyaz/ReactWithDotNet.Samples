@@ -37,13 +37,13 @@ public static class ReactWithDotNetIntegration
                 return;
             }
 
-#if DEBUG
+            #if DEBUG
             if (path == ReactWithDotNetDesigner.UrlPath)
             {
                 await WriteHtmlResponse(httpContext, typeof(MainLayout), typeof(ReactWithDotNetDesigner));
                 return;
             }
-#endif
+            #endif
 
             await next();
         });
@@ -56,12 +56,23 @@ public static class ReactWithDotNetIntegration
         return ProcessReactWithDotNetComponentRequest(new()
         {
             HttpContext           = httpContext,
-            OnReactContextCreated = OnReactContextCreated
+            OnReactContextCreated = OnReactContextCreated,
+            OnReactContextDisposed = OnReactContextDisposed
         });
+    }
+
+
+    static Task OnReactContextDisposed(ReactContext reactcontext, Exception exception)
+    {
+        // you can dispose db connections or user specific informations
+        
+        return Task.CompletedTask;
     }
 
     static Task OnReactContextCreated(ReactContext context)
     {
+        // you can open db connections or user specific informations to context
+        
         return Task.CompletedTask;
     }
 
