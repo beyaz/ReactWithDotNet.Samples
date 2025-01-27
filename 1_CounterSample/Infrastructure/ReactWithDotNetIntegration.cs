@@ -89,7 +89,6 @@ public static class ReactWithDotNetIntegration
             LayoutType            = layoutType,
             MainContentType       = mainContentType,
             HttpContext           = httpContext,
-            QueryString           = httpContext.Request.QueryString.ToString(),
             OnReactContextCreated = OnReactContextCreated
         });
     }

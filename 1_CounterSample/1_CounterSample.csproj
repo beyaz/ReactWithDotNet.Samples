@@ -14,7 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="ReactWithDotNet" Version="1.0.0" />
+		<PackageReference Include="ReactWithDotNet" Version="1.0.10" />
 	</ItemGroup>
 
 </Project>
